@@ -1,0 +1,231 @@
+module Atm1 (
+  input wire IC,   // Insert Card
+  input wire CS,   // Card Scan
+  input wire PM,   // PIN matched
+  input wire IP,   // PIN count
+  input wire DA,   // Valid Note
+  input wire AM,   // Amount Type
+  output wire [3:0] LED,
+  output wire CP,  // Cash Present
+  output wire WP   // Withdrawal Possible
+);
+  
+  // Internal states
+  reg [3:0] state, next_state;
+  reg [2:0] pin_count;
+  reg [7:0] deposit_amount;
+  reg [7:0] withdrawal_amount;
+  reg [3:0] otp;
+  
+  // Constants
+  parameter S0 = 4'b0000;
+  parameter S1 = 4'b0001;
+  parameter S2 = 4'b0010;
+  parameter S3 = 4'b0011;
+  parameter A1 = 4'b0100;
+  parameter A2 = 4'b0101;
+  parameter A3 = 4'b0110;
+  parameter S4 = 4'b0111;
+  parameter S5 = 4'b1000;
+  parameter S6 = 4'b1001;
+  parameter S7 = 4'b1010;
+  parameter S8 = 4'b1011;
+  parameter S9 = 4'b1100;
+  parameter S10 = 4'b1101;
+  parameter S11 = 4'b1110;
+  parameter S12 = 4'b1111;
+  parameter S13 = 4'b0000;
+  parameter S14 = 4'b0001;
+  parameter S15 = 4'b0010;
+  
+  // Assign initial state
+  always @(posedge clk) begin
+    if (reset)
+      state <= S0;  // Initial state
+    else
+      state <= next_state;
+  end
+  
+  // Next state and output logic
+  always @(state or IC or CS or PM or IP or DA or AM) begin
+    case (state)
+      S0: begin
+        if (IC) next_state = S1;
+        else next_state = S0;
+      end
+      S1: begin
+        if (CS) next_state = S2;
+        else next_state = S1;
+      end
+      S2: begin
+        if (PM) next_state = S3;
+        else if (IP == 1) next_state = A1;
+        else if (IP == 2) next_state = A2;
+        else if (IP == 3) next_state = A3;
+        else next_state = S2;
+      end
+      S3: begin
+        if (DA) next_state = S4;
+        else next_state = S3;
+      end
+      A1: begin
+        next_state = S2;
+      end
+      A2: begin
+        next_state = S2;
+      end
+      A3: begin
+        next_state = S2;
+      end
+      S4: begin
+        if (AM) next_state = S5;
+        else next_state = S4;
+      end
+      S5: begin
+        if (withdrawal_amount < 10000) next_state = S6;
+        else next_state = S7;
+      end
+      S6: begin
+        if (WP) next_state = S10;
+        else next_state = S6;
+      end
+      S7: begin
+        if (DA) next_state = S8;
+        else next_state = S7;
+      end
+      S8: begin
+        if (otp == 1234) next_state = S9;
+        else next_state = S8;
+      end
+      S9: begin
+        next_state = S10;
+      end
+      S10: begin
+        if (CP) next_state = S11;
+        else next_state = S14;
+      end
+      S11: begin
+        next_state = S15;
+      end
+      S12: begin
+        next_state = S13;
+      end
+      S13: begin
+        next_state = S12;
+      end
+      S14: begin
+        next_state = S12;
+      end
+      S15: begin
+        next_state = S0;
+      end
+      default: next_state = S0;
+    endcase
+  end
+  
+  // Update outputs based on the current state
+  always @(state) begin
+    case (state)
+      S0: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S1: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S2: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S3: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      A1: begin
+        LED = 4'b0001;
+        CP = 0;
+        WP = 0;
+      end
+      A2: begin
+        LED = 4'b0010;
+        CP = 0;
+        WP = 0;
+      end
+      A3: begin
+        LED = 4'b0100;
+        CP = 0;
+        WP = 0;
+      end
+      S4: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S5: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S6: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S7: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S8: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S9: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S10: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S11: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S12: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S13: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S14: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      S15: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+      default: begin
+        LED = 4'b0000;
+        CP = 0;
+        WP = 0;
+      end
+    endcase
+  end
+endmodule

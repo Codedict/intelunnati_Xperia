@@ -1,0 +1,45 @@
+module Atm1_tb;
+  reg clk;
+  reg reset;
+  reg IC;
+  reg CS;
+  reg PM;
+  reg IP;
+  reg DA;
+  reg AM;
+  wire [3:0] LED;
+  wire CP;
+  wire WP;
+
+  Atm1 atm (
+    .clk(clk),
+    .reset(reset),
+    .IC(IC),
+    .CS(CS),
+    .PM(PM),
+    .IP(IP),
+    .DA(DA),
+    .AM(AM),
+    .LED(LED),
+    .CP(CP),
+    .WP(WP)
+  );
+
+  initial begin
+    clk = 0;
+    forever #5 clk = ~clk;
+  end
+
+  initial begin
+    reset = 1;
+    #10 reset = 0;
+    #10 IC = 1;
+    #10 CS = 1;
+    #10 PM = 1;
+    #10 IP = 3;
+    #10 DA = 1;
+    #10 AM = 1;
+    #100;
+    $finish;
+  end
+endmodule
