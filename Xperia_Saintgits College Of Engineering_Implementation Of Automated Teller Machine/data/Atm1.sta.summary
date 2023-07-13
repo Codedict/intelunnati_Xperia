@@ -1,0 +1,197 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'withdrawal_amount[0]'
+Slack : -4.487
+TNS   : -4.487
+
+Type  : Slow 1100mV 85C Model Setup 'pin[0]'
+Slack : -3.546
+TNS   : -7.049
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.393
+TNS   : -147.557
+
+Type  : Slow 1100mV 85C Model Setup 'state.0100'
+Slack : -1.614
+TNS   : -2.902
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : -0.668
+TNS   : -7.191
+
+Type  : Slow 1100mV 85C Model Hold 'state.0100'
+Slack : 0.576
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'pin[0]'
+Slack : 1.066
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'withdrawal_amount[0]'
+Slack : 1.796
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -40.314
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'withdrawal_amount[0]'
+Slack : 0.304
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'pin[0]'
+Slack : 0.323
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'state.0100'
+Slack : 0.461
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'withdrawal_amount[0]'
+Slack : -4.272
+TNS   : -4.272
+
+Type  : Slow 1100mV 0C Model Setup 'pin[0]'
+Slack : -3.707
+TNS   : -7.339
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.244
+TNS   : -137.828
+
+Type  : Slow 1100mV 0C Model Setup 'state.0100'
+Slack : -1.587
+TNS   : -2.921
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : -0.753
+TNS   : -8.112
+
+Type  : Slow 1100mV 0C Model Hold 'state.0100'
+Slack : 0.463
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'pin[0]'
+Slack : 1.064
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'withdrawal_amount[0]'
+Slack : 1.518
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.394
+TNS   : -43.960
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'pin[0]'
+Slack : 0.312
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'withdrawal_amount[0]'
+Slack : 0.321
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'state.0100'
+Slack : 0.446
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'withdrawal_amount[0]'
+Slack : -3.335
+TNS   : -3.335
+
+Type  : Fast 1100mV 85C Model Setup 'clk'
+Slack : -2.589
+TNS   : -93.419
+
+Type  : Fast 1100mV 85C Model Setup 'pin[0]'
+Slack : -1.381
+TNS   : -2.759
+
+Type  : Fast 1100mV 85C Model Setup 'state.0100'
+Slack : -0.430
+TNS   : -0.631
+
+Type  : Fast 1100mV 85C Model Hold 'clk'
+Slack : -0.466
+TNS   : -5.279
+
+Type  : Fast 1100mV 85C Model Hold 'state.0100'
+Slack : 0.376
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'pin[0]'
+Slack : 0.548
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'withdrawal_amount[0]'
+Slack : 1.326
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
+Slack : -0.081
+TNS   : -5.961
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'withdrawal_amount[0]'
+Slack : 0.007
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'pin[0]'
+Slack : 0.043
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'state.0100'
+Slack : 0.467
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'withdrawal_amount[0]'
+Slack : -2.927
+TNS   : -2.927
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.040
+TNS   : -74.910
+
+Type  : Fast 1100mV 0C Model Setup 'pin[0]'
+Slack : -1.234
+TNS   : -2.464
+
+Type  : Fast 1100mV 0C Model Setup 'state.0100'
+Slack : -0.313
+TNS   : -0.443
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : -0.481
+TNS   : -5.425
+
+Type  : Fast 1100mV 0C Model Hold 'state.0100'
+Slack : 0.308
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'pin[0]'
+Slack : 0.506
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'withdrawal_amount[0]'
+Slack : 1.074
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
+Slack : -0.083
+TNS   : -6.141
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'withdrawal_amount[0]'
+Slack : 0.008
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'pin[0]'
+Slack : 0.041
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'state.0100'
+Slack : 0.475
+TNS   : 0.000
+
+------------------------------------------------------------

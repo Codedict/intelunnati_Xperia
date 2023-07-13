@@ -1,0 +1,12 @@
+Power Analyzer Status : Successful - Wed Jun 21 21:53:22 2023
+Quartus Prime Version : 18.0.0 Build 614 04/24/2018 SJ Lite Edition
+Revision Name : Atm1
+Top-level Entity Name : Atm1
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Power Models : Final
+Total Thermal Power Dissipation : 425.15 mW
+Core Dynamic Thermal Power Dissipation : 0.00 mW
+Core Static Thermal Power Dissipation : 411.26 mW
+I/O Thermal Power Dissipation : 13.89 mW
+Power Estimation Confidence : Low: user provided insufficient toggle rate data
